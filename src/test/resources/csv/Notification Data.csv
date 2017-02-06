@@ -1,0 +1,2 @@
+notificationGuid,deviceGuid,userGuid,eventType,eventSubtype,geofenceLat,geofenceLon,geofenceRadiusMetres,title,content,eventTimestamp,sentTimestamp
+532a20d3-aef0-4554-9bc1-9561dbd6151c,f897e6a4-4fb8-41ce-a07d-080da859bbf9,99c6ac34-b017-4391-9ea7-c64d07263237,SITE_BLOCKED,YOUTUBE,51.5047,-0.1753,1000,Offer just for you!,Visit Starbucks Marble Arch for a free sandwich,1.39048E+12,1.39048E+12
