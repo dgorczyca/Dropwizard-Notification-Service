@@ -1,7 +1,13 @@
-# Dropwizard-Notification-Service
+# Notification-Service REST API written with <a href="http://dropwizard.io/">Dropwizzard</a> framework in Java 8 with help of Jersey, Mockito, Lombok and more
 
 The task given was to build an enterprise ready REST API Web Service that would underpin existing Notification Centre.
-Following Dropwizzard's convention I put domain classess into API package, resources package contains web service end points controller.<br />
+<h3>Packages created</h3>
+ - api - contains domain classess
+ - resources - contains web service end points controller
+ - health - webservice health check endpoint<br />
+ - service - business logic<br />
+ - utility - CSV file reader<br />
+ <br />
 Following Maven's standards tests and source code are in src folder in respective packages, the groupId of the project is com.example.notificationcentre.notifications, artifactId is notifications, utility package is for reading csv files.<br /><br />
 CSVReader uses Java 8 streams, lambda expressions have also been used in the service class to manage the stream - sort, update, remove and get methods use those expressions to filter through the notification's list.<br /><br />
 All end points have written tests, more about it below.<br />
@@ -14,9 +20,9 @@ class: NotificationTest<br />
 package: com.example.notificationcentre.notifications.utility<br />
 class: CSVReaderTest<br /><br />
  - server tests done using Mockito<br />
-    - checked every end point<br />
-    - tests written including correct and wrong requests (confirmed excepted exceptions returned)<br />
-    - check service's methods are called with correct values and correct status codes are returned from the web service<br />
+  - checked every end point<br />
+  - tests written including correct and wrong requests (confirmed excepted exceptions returned)<br />
+  - check service's methods are called with correct values and correct status codes are returned from the web service<br />
 package: com.example.notificationcentre.notifications.resources<br />
 class: NotificationResourceTest<br />
 <br /><br />
@@ -34,10 +40,10 @@ URL : /api/notifications/{notificationGuid}<br />
 Returns : Notification object serialised to JSON<br />
 example URL : localhost:8080/api/notifications/cad4a703-723b-49a3-aa0d-80efc82035a8<br />
 Response Code : 200, If not found : returns 404<br /><br />
-Mark notification as read<br />
+Mark notification as read</h6><br />
 HTTP Method : PUT<br />
 URL : /api/notifications/{notificationGuid}/status<br />
-Returns : Empty<br />
+Returns : Empty body<br />
 example URL : localhost:8080/api/notifications/cad4a703-723b-49a3-aa0d-80efc82035a8/status<br />
 expects body :  either value "READ" or "UNREAD"<br />
 Response Code : 202, If not found : returns 404<br /><br />
